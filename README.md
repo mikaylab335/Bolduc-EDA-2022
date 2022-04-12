@@ -1,5 +1,8 @@
 # Bolduc-EDA-2022
-## Correlation Between COVID Cases and Vaccination Status Among Different Age Groups in the U.S. 
+
+# Correlation Between COVID Cases and Vaccination Status Among Different Age Groups in the U.S. 
+### Author: Mikayla Bolduc
+### Affiliation: Minnesota State University Moorhead Biosciences
 
 ## Abstract
 COVID-19 vaccinations in the U.S. first became available to select populations, such as the elderly and immunocompromised, back in June 2020, right after COVID-19 broke out in March. Fast forward to present day where vaccinations are available to everyone, along with the development of a booster shot. However, since then, vaccines have become a very controversial topic. 
@@ -22,7 +25,7 @@ We will be using data from COVID Data Tracker, which is a website managed by the
 
 ### Data Acquisition
 
-COVID data: Cases
+Get COVID data: Cases
 
 1.  Go to <https://covid.cdc.gov/covid-data-tracker/#demographics>
 2. Scroll to "View Data"
@@ -30,7 +33,7 @@ COVID data: Cases
 4. Click on CSV
 5.  Save to data folder (Public_Dataset_Age_1_)
 
-COVID data: Vaccination Status
+Get COVID data: Vaccination Status
 
 1. Go to https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-and-Case-Trends-by-Age-Group-/gxj9-t96f
 2. Scroll to "View Data"
