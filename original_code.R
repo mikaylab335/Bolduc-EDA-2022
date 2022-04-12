@@ -1,5 +1,9 @@
 library(tidyverse)
 
+# Getting citation for tidyverse and Rstudio (still need)
+citation()
+citation("tidyverse")
+
 
 if (!dir.exists("figs")) dir.create("figs")
 
