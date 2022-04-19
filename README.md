@@ -50,10 +50,11 @@ Get COVID data: Vaccination Status
 
 
 ## Discussion
-
+We were unable to run a statistical test on this data due to the age groups being different between the different data sets that we used.
 
 ## References
-
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
+  Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
 ## Acknowledgements
 I would like to thank Chris Merkord and Shelby Pankratz for their help with this project.
