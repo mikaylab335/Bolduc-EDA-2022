@@ -79,7 +79,5 @@ COVID data: Vaccination Status
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
   Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
-
-
 ## Acknowledgements
 We would like to give a big thanks to Dr. Chris Merkord and Shelby Pankratz for assisting me with this project, and everyone else who was indirectly involved. 
