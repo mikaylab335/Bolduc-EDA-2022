@@ -51,7 +51,9 @@ Get COVID data: Vaccination Status
 
 ## Discussion
 
+
 ## References
 
-## Acknowledgements
 
+## Acknowledgements
+I would like to thank Chris Merkord and Shelby Pankratz for their help with this project.
