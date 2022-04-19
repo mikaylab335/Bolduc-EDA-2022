@@ -69,4 +69,4 @@ COVID data: Vaccination Status
   We were unable to run a statistical test on this data due to the age groups being different between the different data sets that we used. 
 >>>>>>> b028c07a54029e3333eeed9d175d30dc4af15d86
 ## References/Acknowledgements
-We would like to give a big thanks to Dr. Chris Merkord for assisting us with this project, and everyone else who was indirectly involved. 
+We would like to give a big thanks to Dr. Chris Merkord and Shelby Pankratz for assisting me with this project, and everyone else who was indirectly involved. 
