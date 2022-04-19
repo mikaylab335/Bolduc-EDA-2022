@@ -2,7 +2,7 @@
 
 -   Added to README
 
-    -    Author and affiliation
+    -   Author and affiliation
 
     -   Table of contents
 
@@ -10,4 +10,12 @@
 
     -   Added content to methods
 
--   
+    -   Added References
+
+    -   
+
+-   Original Code tweaks
+
+    -   Fixed Vaccination data to run better
+
+    -   

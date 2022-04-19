@@ -2,17 +2,29 @@
   output: github_document
 ---
   
-  ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
 ```
 
 # Correlation Between COVID Cases and Vaccination Status Among Different Age Groups in the U.S.
 
 Mikayla Bolduc^1^
   
-  ^1^Minnesota State University Moorhead Biosciences
+  Minnesota State University Moorhead Biosciences Department^1^
 
 ## Abstract
+
+- COVID cases have increased among all age groups from December of 2021 going into March of 2022.
+- COVID vaccine rates have increased among all age groups and continue to. 
+- 
+- 
+
+
+## Introduction
 
 COVID-19 vaccinations in the U.S. first became available to select populations, such as the elderly and immunocompromised, back in June 2020, right after COVID-19 was declared a pandemic in March. Fast forward to present day where vaccinations are available to everyone, along with the development of a booster shot. However, since then, vaccines have become a very controversial topic. 
 
@@ -46,27 +58,28 @@ COVID data: Vaccination Status
 - Print both data sets into an Rscript in R
 - Filter data set to get the variables that are needed for this project
 - Graph the data sets 
-1. Go to https://data.cdc.gov/Vaccinations/COVID-19-Vaccination-and-Case-Trends-by-Age-Group-/gxj9-t96f
-2. Scroll to "View Data"
-3. Click on the Export Tab
-4. Click on CSV
-5. Save to data folder (COVID-19_Vaccination_and_Case_Trends_by_Age_Group__United_States.csv)
-
-COVID data: Vaccination Status
-
-1. Go to https://covid.cdc.gov/covid-data-tracker/#vaccination-demographic
-2. Scroll to "View Data"
-3. Click on the Export Tab
-4. Click on CSV
-5. Save to data folder (age_groups_of_people_fully_vaccinated.csv)
 
 ## Results
 
+```{r read-data}
+
+```
+
+
+```{r first-graph}
+
+```
+
+
 ## Discussion
-<<<<<<< HEAD
-- 
-  =======
+
   We were unable to run a statistical test on this data due to the age groups being different between the different data sets that we used. 
->>>>>>> b028c07a54029e3333eeed9d175d30dc4af15d86
-## References/Acknowledgements
+
+## References
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
+  Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+
+
+## Acknowledgements
 We would like to give a big thanks to Dr. Chris Merkord and Shelby Pankratz for assisting me with this project, and everyone else who was indirectly involved. 
