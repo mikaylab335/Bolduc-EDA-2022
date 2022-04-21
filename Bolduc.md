@@ -11,8 +11,21 @@ Minnesota State University Moorhead Biosciences Department<sup>1</sup>
     2021 going into March of 2022.
 -   COVID vaccine rates have increased among all age groups and continue
     to.
--   
--   
+-   We couldn’t run a statistical test on this data due to the different
+    age groups.
+-   The increase in both COVID cases and vaccination rates both
+    increased but this doesn’t necessarily mean that the vaccines are
+    ineffective.
+    -   There can be many reasons for this like the different variants
+        being spread at this time. Such as the Omicron variant that was
+        between December 2021-March 2022
+
+## Table of COntents
+
+-   Background on COVID and its vaccines
+-   How to get data
+-   Results, Figures, and what that means
+-   Reference/Acknowledgements
 
 ## Introduction
 
@@ -69,17 +82,20 @@ COVID data: Vaccination Status
 
 ## Results
 
-![](Bolduc_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
-
 ## Discussion
 
 We were unable to run a statistical test on this data due to the age
-groups being different between the different data sets that we used.
+groups being different between the different data sets that we used.The
+reason we were unable to do this was because the data sets used didn’t
+have the exact same age ranges.
 
 ## References
 
-Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
-Software, 4(43), 1686, <https://doi.org/10.21105/joss.01686>
+RStudio Team (2021). RStudio: Integrated Development Environment for R.
+RStudio, PBC, Boston, MA URL
+<a href="http://www.rstudio.com/.##" class="uri">http://www.rstudio.com/.##</a>
+References Wickham et al., (2019). Welcome to the tidyverse. Journal of
+Open Source Software, 4(43), 1686, <https://doi.org/10.21105/joss.01686>
 
 ## Acknowledgements
 

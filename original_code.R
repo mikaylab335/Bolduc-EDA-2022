@@ -3,12 +3,17 @@ library(tidyverse)
 # Getting citation for tidyverse and Rstudio (still need)
 citation()
 citation("tidyverse")
-
+RStudio.Version()
 
 if (!dir.exists("figs")) dir.create("figs")
 
-age_group_levels <- c("<5", "5-11", "<12", "16-17", "18-24", 
-                      "25-39", "40-49", "50-64", "65-74", "75+")
+ages <- tibble(
+  age_group = c("5-11", "12-17", "18-24", 
+                "25-39", "40-49", "50-64", "65-74", "75+"),
+  age_start = c(5, 12, 18, 25, 40, 50, 65, 75),
+  age_end = c(12, 18, 25, 40, 50, 65, 75, 89)
+) %>% 
+  mutate(age_group = as_factor(age_group))
 
 ## vaccination
 # raw data
@@ -22,13 +27,16 @@ vax_data <-
     age_group=str_remove(age_group, "_yrs"),
     age_group=str_remove(age_group, "yrs"),
   ) %>% 
-  filter(!age_group %in% c("<12yrs", "<5yrs", "12-15", "16-17")) %>% 
-  mutate(age_group = factor(age_group, levels = age_group_levels)) %>%
-  rename(
+  # filter(!age_group %in% c("<12", "<5", "12-15", "16-17")) %>%
+  mutate(age_group = factor(age_group, levels = ages$age_group)) %>%
+  inner_join(ages) %>%
+  # filter(is.na(age_group2)) %>%
+  # select(starts_with("age"))
+rename(
     per_vax = Series_Complete_Pop_pct_agegroup, 
     date = Date
   ) %>% 
-  select(date, age_group, per_vax) %>%
+  select(date, starts_with("age"), per_vax) %>%
   print()
 
 #column graph
@@ -37,15 +45,28 @@ vax_data %>%
   ggplot()+
   geom_col(mapping = aes(x=age_group, y=per_vax), 
            fill = "#a6192e") +
-  labs(y="% Fully Vaccinated", x="Age Range", title = "Vaccination Status as of March 27, 2022")+
-  theme_gray(base_size = 16)
+  labs(y="% Fully Vaccinated", x="Age", title = "Vaccination Status for the US as of March 27, 2022")+
+  theme_gray(base_size = 15)
+ggsave("figs/vax data.png", height = 6, width = 10, units="in", dpi=600)
+
+# New graph
+vax_data %>% 
+  filter(date == max(date)) %>% 
+  ggplot()+
+  geom_rect(aes(xmin = age_start, xmax = age_end, ymin = 0, ymax = per_vax), 
+            fill = "#a6192e", color = "azure") +
+  geom_rect(aes(xmin = age_start, xmax = age_end, ymin = per_vax, ymax = 100), 
+            fill = "blue", color = "azure") +
+  labs(y="% Fully Vaccinated", x="Age", title = "Vaccination Status for the US as of March 27, 2022")+
+  theme_gray(base_size = 15)
 ggsave("figs/vax data.png", height = 6, width = 10, units="in", dpi=600)
 
 # line graph 
 vax_data %>% 
   ggplot(aes(x = date, y = per_vax, color = age_group)) +
   geom_line() +
-  theme_gray(base_size = 16)
+  labs(y="% Fully Vaccinated", x="Date", title = "Vaccination Status for the US as of March 27, 2022")+
+  theme_gray(base_size = 15)
 ggsave("figs/line vax data.png", height = 6, width = 10, units="in", dpi=600)
 
 
@@ -67,7 +88,8 @@ cases_by_age %>%
   ggplot()+
   geom_col(mapping = aes(x=age_range, y=total_cases, fill=as.factor(date)),
            position="dodge2") +
-  labs(y="# of Cases", x="Age Range", title="COVID-19 Cases Among  Age Groups") 
+  labs(y="# of Cases", x="Age Group", title="COVID-19 Cases Among  Age Groups") +
+  theme_gray(base_size = 15)
 
 # multiple graphs 
 cases_by_age %>% 
@@ -76,7 +98,8 @@ cases_by_age %>%
   geom_col(mapping = aes(x = date, y = total_cases),
            fill = "#a6192e") +
   facet_wrap(~ age_range)+
-  theme_gray(base_size = 16)+
+  labs(y="Total Cases", x="Date", title = "COVID Cases in the US")+
+  theme_gray(base_size = 15)+
   theme(axis.text.x=element_text(size=rel(.8)))
 ggsave("figs/case data.png", height = 8, width = 12, units="in", dpi=600)
 
