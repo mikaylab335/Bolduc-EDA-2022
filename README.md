@@ -21,8 +21,13 @@ We will be using data from COVID Data Tracker, which is a website managed by the
 -
 
 ## Introduction
+COVID-19 vaccinations in the U.S. first became available to select groups in the population, such as the elderly and immunocompromised, back in June 2020, right after COVID-19 broke out in March. Today the vaccinations are available to everyone, along with the development of a booster shot. However, since then, these vaccines have become a very controversial topic. 
 
+The COVID-19 vaccines were the fastest vaccines to get approved for use. This has led to many people wondering, how effective are these vaccines?
+  
+In this project, we will be doing an exploratory data analysis on the correlation between the number of COVID-19 cases and the number of people vaccinated. This will help to show the effectiveness of the vaccine. 
 
+We will be using data from COVID Data Tracker, which is managed by the CDC, to look for relationships between positive COVID-19 cases and vaccination status among different age groups. We will be looking at the whole population of the U.S. to get accurate information on the effectiveness of the COVID-19 vaccine where we are. If the vaccine is effective, we should see that as the number of vaccinated people goes up than the amount of COVID-19 cases will go down.
 
 ## Methods
 
@@ -53,6 +58,8 @@ Get COVID data: Vaccination Status
 We were unable to run a statistical test on this data due to the age groups being different between the different data sets that we used.
 
 ## References
+RStudio Team (2021). RStudio: Integrated Development Environment for R.
+  RStudio, PBC, Boston, MA URL http://www.rstudio.com/.
 Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
   Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
 
