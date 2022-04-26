@@ -9,18 +9,24 @@ Minnesota State University Moorhead Biosciences Department<sup>1</sup>
 
 -   COVID cases have increased among all age groups from December of
     2021 going into March of 2022.
+
 -   COVID vaccine rates have increased among all age groups and continue
     to.
+
 -   We couldn’t run a statistical test on this data due to the different
     age groups.
+
 -   The increase in both COVID cases and vaccination rates both
     increased but this doesn’t necessarily mean that the vaccines are
     ineffective.
+
     -   There can be many reasons for this like the different variants
         being spread at this time. Such as the Omicron variant that was
-        between December 2021-March 2022
+        between December 2021-March 2022.
 
-## Table of COntents
+![](https://www.google.com/url?sa=i&url=https%25253A%25252F%25252Fwww.nytimes.com%25252Finteractive%25252F2020%25252Fhealth%25252Fcoronavirus-unveiled.html&psig=AOvVaw1ezEv9_kD0eOTyp-Z_AEt9&ust=1651079921455000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCICr-ZqesvcCFQAAAAAdAAAAABAD)
+
+## Table of Contents
 
 -   Background on COVID and its vaccines
 -   How to get data
@@ -82,6 +88,40 @@ COVID data: Vaccination Status
 
 ## Results
 
+This is the first graph I made that looked at the percent of fully
+vaccinated people in each age group. This means full vaccination plus
+the booster.
+
+![](Bolduc_files/figure-gfm/first-graph-1.png)<!-- -->
+
+This is the first graph but with the column being the width of the age
+group since not all the age groups were the same range in ages.
+
+![](Bolduc_files/figure-gfm/second-graph-1.png)<!-- -->
+
+This is a time-wise graph of vaccination rates and shows when each age
+groups were getting the vaccine while also showing the percent of the
+age group vaccinated.
+
+![](Bolduc_files/figure-gfm/third-graph-1.png)<!-- -->
+
+This graph is showing the number of cases for the age groups being
+compared from December 1, 2021 and March 26, 2022 all in one.
+
+![](Bolduc_files/figure-gfm/fourth-graph-1.png)<!-- -->
+
+This shows each age groups, each with its own graph, so we can look at
+each individual age group compared to itself from December 1, 2021 and
+March 26, 2022.
+
+![](Bolduc_files/figure-gfm/fifth-graph-1.png)<!-- -->
+
+This shows each age group with each its own graph again but between
+December 1, 2020 and December 1, 2021. We can see an overall increase
+within this year timeline.
+
+![](Bolduc_files/figure-gfm/sixth-graph-1.png)<!-- -->
+
 ## Discussion
 
 We were unable to run a statistical test on this data due to the age
@@ -93,9 +133,10 @@ have the exact same age ranges.
 
 RStudio Team (2021). RStudio: Integrated Development Environment for R.
 RStudio, PBC, Boston, MA URL
-<a href="http://www.rstudio.com/.##" class="uri">http://www.rstudio.com/.##</a>
-References Wickham et al., (2019). Welcome to the tidyverse. Journal of
-Open Source Software, 4(43), 1686, <https://doi.org/10.21105/joss.01686>
+[http://www.rstudio.com/.](http://www.rstudio.com/.##)
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source
+Software, 4(43), 1686, <https://doi.org/10.21105/joss.01686>
 
 ## Acknowledgements
 

@@ -44,7 +44,7 @@ vax_data %>%
   filter(date == max(date)) %>% 
   ggplot()+
   geom_col(mapping = aes(x=age_group, y=per_vax), 
-           fill = "#a6192e") +
+           fill = "darkseagreen") +
   labs(y="% Fully Vaccinated", x="Age", title = "Vaccination Status for the US as of March 27, 2022")+
   theme_gray(base_size = 15)
 ggsave("figs/vax data.png", height = 6, width = 10, units="in", dpi=600)
@@ -54,9 +54,9 @@ vax_data %>%
   filter(date == max(date)) %>% 
   ggplot()+
   geom_rect(aes(xmin = age_start, xmax = age_end, ymin = 0, ymax = per_vax), 
-            fill = "#a6192e", color = "azure") +
+            fill = "darkseagreen", color = "azure") +
   geom_rect(aes(xmin = age_start, xmax = age_end, ymin = per_vax, ymax = 100), 
-            fill = "blue", color = "azure") +
+            fill = "azure3", color = "azure") +
   labs(y="% Fully Vaccinated", x="Age", title = "Vaccination Status for the US as of March 27, 2022")+
   theme_gray(base_size = 15)
 ggsave("figs/vax data.png", height = 6, width = 10, units="in", dpi=600)
@@ -88,17 +88,32 @@ cases_by_age %>%
   ggplot()+
   geom_col(mapping = aes(x=age_range, y=total_cases, fill=as.factor(date)),
            position="dodge2") +
+  scale_fill_manual(values=c("darkseagreen", "azure3")) +
   labs(y="# of Cases", x="Age Group", title="COVID-19 Cases Among  Age Groups") +
   theme_gray(base_size = 15)
 
 # multiple graphs 
 cases_by_age %>% 
-  filter(date == as.Date("2022-03-26") | date == as.Date("2021-03-01")) %>% 
+  filter(date == as.Date("2022-03-26") | date == as.Date("2021-12-01")) %>% 
   ggplot() +
   geom_col(mapping = aes(x = date, y = total_cases),
-           fill = "#a6192e") +
+           fill = "darkseagreen") +
   facet_wrap(~ age_range)+
-  labs(y="Total Cases", x="Date", title = "COVID Cases in the US")+
+  labs(y="Total Cases", x="Date", title = "COVID Cases in the US (December 1, 
+       2021 and March 26, 2022)")+
+  theme_gray(base_size = 15)+
+  theme(axis.text.x=element_text(size=rel(.8)))
+ggsave("figs/case data.png", height = 8, width = 12, units="in", dpi=600)
+
+# New multiple graph
+cases_by_age %>% 
+  filter(date == as.Date("2020-12-01") | date == as.Date("2021-12-01")) %>% 
+  ggplot() +
+  geom_col(mapping = aes(x = date, y = total_cases),
+           fill = "darkseagreen") +
+  facet_wrap(~ age_range)+
+  labs(y="Total Cases", x="Date", title = "COVID Cases in the US (December 1, 
+       2020 and December 1, 2021)")+
   theme_gray(base_size = 15)+
   theme(axis.text.x=element_text(size=rel(.8)))
 ggsave("figs/case data.png", height = 8, width = 12, units="in", dpi=600)
