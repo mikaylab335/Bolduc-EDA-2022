@@ -30,13 +30,6 @@ Minnesota State University Moorhead Biosciences Department^1^
 
 <img src="https://static01.nyt.com/images/2020/10/11/us/coronavirus-unveiled-promo-1602171596829/coronavirus-unveiled-promo-1602171596829-superJumbo-v3.jpg" width="528"/>
 
-## Table of Contents
-
--   Background on COVID and its vaccines
--   How to get data
--   Results, Figures, and what that means
--   Reference/Acknowledgements
-
 ## Introduction
 
 COVID-19 vaccinations in the U.S. first became available to select populations, such as the elderly and immunocompromised, back in June 2020, right after COVID-19 was declared a pandemic in March. Fast forward to present day where vaccinations are available to everyone, along with the development of a booster shot. However, since then, vaccines have become a very controversial topic.
@@ -108,7 +101,7 @@ rename(
   select(date, starts_with("age"), per_vax)
 ```
 
-This is the first graph I made that looked at the percent of fully vaccinated people in each age group. This means full vaccination plus the booster.
+This is the first graph I made that looked at the percent of fully vaccinated people in each age group. This defines fully vaccinated by having a full vaccination plus the booster.
 
 ```{r first-graph}
 vax_data %>% 
@@ -120,7 +113,7 @@ vax_data %>%
   theme_gray(base_size = 15)
 ```
 
-This is the first graph but with the column being the width of the age group since not all the age groups were the same range in ages.
+This is the first graph but I changed it to make the columns to being the width of the age group since not all the age groups were over the same range in ages.
 
 ```{r second-graph}
 vax_data %>% 
@@ -134,7 +127,7 @@ vax_data %>%
   theme_gray(base_size = 15)
 ```
 
-This is a time-wise graph of vaccination rates and shows when each age groups were getting the vaccine while also showing the percent of the age group vaccinated.
+This is a time-wise graph of vaccination rates and it shows when each of these age groups were getting the vaccine while also showing the percent of the age group vaccinated at a point in time.
 
 ```{r third-graph}
 # line graph 
@@ -155,7 +148,7 @@ cases_by_age <-
   mutate(date = as.Date(date))
 ```
 
-This graph is showing the number of cases for the age groups being compared from December 1, 2021 and March 26, 2022 all in one.
+This graph is showing the number of cases for the age groups being compared from December 1, 2021 and March 26, 2022 all in one single graph.
 
 ```{r fourth-graph}
 cases_by_age %>%
@@ -169,7 +162,7 @@ cases_by_age %>%
   theme_gray(base_size = 15)
 ```
 
-This shows each age groups, each with its own graph, so we can look at each individual age group compared to itself from December 1, 2021 and March 26, 2022.
+This shows each of the age groups, each with its own graph, so we can look at each individual age group compared to itself from December 1, 2021 and March 26, 2022.
 
 ```{r fifth-graph}
 cases_by_age %>% 
@@ -183,7 +176,7 @@ cases_by_age %>%
   theme(axis.text.x=element_text(size=rel(.8)))
 ```
 
-This shows each age group with each its own graph again but between December 1, 2020 and December 1, 2021. We can see an overall increase within this year timeline.
+This shows each age group each with its own graph again but between December 1, 2020 and December 1, 2021. We can see an overall increase within this year timeline.
 
 ```{r sixth-graph}
 # New multiple graph
@@ -199,9 +192,21 @@ cases_by_age %>%
 ggsave("figs/case data.png", height = 8, width = 12, units="in", dpi=600)
 ```
 
+I wanted to look at the statistical significance between the total number of cases between 2020 and 2021 between the age groups to see if the total cases were significantly different. My Chi-square test found the total cases from 2020 and 2021 to be statistically significant (X^2^ = 5154.5, df = 9, p \< 0.05).
+
+```{r chi-square-test, echo=FALSE}
+cases_by_age %>% 
+  filter(date == as.Date("2020-12-01") | date == as.Date("2021-12-01")) %>% 
+  mutate(date = as.factor(lubridate::year(date))) %>% 
+  pivot_wider(names_from = "date", values_from = "total_cases") %>% 
+  select(-age_range) %>% 
+  as.matrix() %>% 
+  chisq.test()
+```
+
 ## Discussion
 
-We were unable to run a statistical test on this data due to the age groups being different between the different data sets that we used.The reason we were unable to do this was because the data sets used didn't have the exact same age ranges.
+We were unable to run a statistical test between the two different data sets and results due to the age groups being different between the data sets that we used. We can, however, do a statistical test within the data set on its own.
 
 ## References
 

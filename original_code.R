@@ -1,12 +1,14 @@
+# Loading Packages ----
 library(tidyverse)
 
-# Getting citation for tidyverse and Rstudio (still need)
+# Getting citation for tidyverse and Rstudio ----
 citation()
 citation("tidyverse")
 RStudio.Version()
 
 if (!dir.exists("figs")) dir.create("figs")
 
+# Data for Graph with width of age range ----
 ages <- tibble(
   age_group = c("5-11", "12-17", "18-24", 
                 "25-39", "40-49", "50-64", "65-74", "75+"),
@@ -15,8 +17,7 @@ ages <- tibble(
 ) %>% 
   mutate(age_group = as_factor(age_group))
 
-## vaccination
-# raw data
+# Vaccination Raw Data ----
 vax_data <- 
   read_csv("data/COVID-19_Vaccination_Demographics_in_the_United_States_National.csv") %>% 
   filter(str_starts(Demographic_category, "Ages_")) %>% 
@@ -27,11 +28,8 @@ vax_data <-
     age_group=str_remove(age_group, "_yrs"),
     age_group=str_remove(age_group, "yrs"),
   ) %>% 
-  # filter(!age_group %in% c("<12", "<5", "12-15", "16-17")) %>%
   mutate(age_group = factor(age_group, levels = ages$age_group)) %>%
   inner_join(ages) %>%
-  # filter(is.na(age_group2)) %>%
-  # select(starts_with("age"))
 rename(
     per_vax = Series_Complete_Pop_pct_agegroup, 
     date = Date
@@ -39,7 +37,7 @@ rename(
   select(date, starts_with("age"), per_vax) %>%
   print()
 
-#column graph
+# Basic Column Graph ----
 vax_data %>% 
   filter(date == max(date)) %>% 
   ggplot()+
@@ -49,7 +47,7 @@ vax_data %>%
   theme_gray(base_size = 15)
 ggsave("figs/vax data.png", height = 6, width = 10, units="in", dpi=600)
 
-# New graph
+# Column Graph, width of age ranges ----
 vax_data %>% 
   filter(date == max(date)) %>% 
   ggplot()+
@@ -61,7 +59,7 @@ vax_data %>%
   theme_gray(base_size = 15)
 ggsave("figs/vax data.png", height = 6, width = 10, units="in", dpi=600)
 
-# line graph 
+# Line Graph (Time-wise visual) ----
 vax_data %>% 
   ggplot(aes(x = date, y = per_vax, color = age_group)) +
   geom_line() +
@@ -70,8 +68,7 @@ vax_data %>%
 ggsave("figs/line vax data.png", height = 6, width = 10, units="in", dpi=600)
 
 
-## cases
-# raw data w age groups
+# COVID Cases Raw Data ----
 library(readxl)
 cases_by_age <- 
   read_excel("data/Public-Dataset-Age.XLSX") %>% 
@@ -81,10 +78,9 @@ cases_by_age <-
   mutate(date = as.Date(date)) %>% 
   print()
 
-# column graph
+# Column Graph (Comparing 2 different dates) ----
 cases_by_age %>%
-  # filter(date == max(date)) %>%    # choose the last date
-  filter(date == as.Date("2022-03-26") | date == as.Date("2021-12-01")) %>%   # choose a particular date
+  filter(date == as.Date("2022-03-26") | date == as.Date("2021-12-01")) %>% 
   ggplot()+
   geom_col(mapping = aes(x=age_range, y=total_cases, fill=as.factor(date)),
            position="dodge2") +
@@ -92,7 +88,7 @@ cases_by_age %>%
   labs(y="# of Cases", x="Age Group", title="COVID-19 Cases Among  Age Groups") +
   theme_gray(base_size = 15)
 
-# multiple graphs 
+# Multiple Graphs (Comparing 2 different dates) ----
 cases_by_age %>% 
   filter(date == as.Date("2022-03-26") | date == as.Date("2021-12-01")) %>% 
   ggplot() +
@@ -105,7 +101,7 @@ cases_by_age %>%
   theme(axis.text.x=element_text(size=rel(.8)))
 ggsave("figs/case data.png", height = 8, width = 12, units="in", dpi=600)
 
-# New multiple graph
+# New Multiple Graph (different dates being compared) ----
 cases_by_age %>% 
   filter(date == as.Date("2020-12-01") | date == as.Date("2021-12-01")) %>% 
   ggplot() +
@@ -118,3 +114,12 @@ cases_by_age %>%
   theme(axis.text.x=element_text(size=rel(.8)))
 ggsave("figs/case data.png", height = 8, width = 12, units="in", dpi=600)
 
+
+# Statistical analysis ----
+cases_by_age %>% 
+  filter(date == as.Date("2020-12-01") | date == as.Date("2021-12-01")) %>% 
+  mutate(date = as.factor(lubridate::year(date))) %>% 
+  pivot_wider(names_from = "date", values_from = "total_cases") %>% 
+  select(-age_range) %>% 
+  as.matrix() %>% 
+  chisq.test()

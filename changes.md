@@ -20,18 +20,24 @@
 
 -   Original Code tweaks
 
-    -   Fixed Vaccination data to run better
+    -   Cleaned up code
 
-        -   Fixed the age groups in the data
+        -   Fixed Vaccination data to run better
 
-            -   Making the columns the width of the age group/range
+            -   Fixed the age groups in the data
 
-    -   Added title and axis labels for COVID case data
+                -   Making the columns the width of the age group/range
 
-    -   Changed the color of my graphs to have a nicer aesthetic
+        -   Added title and axis labels for graphs made
 
-    -   Made 2 more graphs:
+        -   Changed the color of my graphs to have a nicer aesthetic
 
-        -   1 for vaccination
+        -   Made 2 more graphs:
 
-        -   1 for cases
+            -   1 for vaccination
+
+            -   1 for cases
+
+-   Statistical test on data
+
+    -   Chi-squared test on case data

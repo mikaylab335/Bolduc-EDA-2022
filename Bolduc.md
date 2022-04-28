@@ -24,14 +24,7 @@ Minnesota State University Moorhead Biosciences Department<sup>1</sup>
         being spread at this time. Such as the Omicron variant that was
         between December 2021-March 2022.
 
-![](https://www.google.com/url?sa=i&url=https%25253A%25252F%25252Fwww.nytimes.com%25252Finteractive%25252F2020%25252Fhealth%25252Fcoronavirus-unveiled.html&psig=AOvVaw1ezEv9_kD0eOTyp-Z_AEt9&ust=1651079921455000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCICr-ZqesvcCFQAAAAAdAAAAABAD)
-
-## Table of Contents
-
--   Background on COVID and its vaccines
--   How to get data
--   Results, Figures, and what that means
--   Reference/Acknowledgements
+<img src="https://static01.nyt.com/images/2020/10/11/us/coronavirus-unveiled-promo-1602171596829/coronavirus-unveiled-promo-1602171596829-superJumbo-v3.jpg" width="528"/>
 
 ## Introduction
 
@@ -89,45 +82,58 @@ COVID data: Vaccination Status
 ## Results
 
 This is the first graph I made that looked at the percent of fully
-vaccinated people in each age group. This means full vaccination plus
-the booster.
+vaccinated people in each age group. This defines fully vaccinated by
+having a full vaccination plus the booster.
 
 ![](Bolduc_files/figure-gfm/first-graph-1.png)<!-- -->
 
-This is the first graph but with the column being the width of the age
-group since not all the age groups were the same range in ages.
+This is the first graph but I changed it to make the columns to being
+the width of the age group since not all the age groups were over the
+same range in ages.
 
 ![](Bolduc_files/figure-gfm/second-graph-1.png)<!-- -->
 
-This is a time-wise graph of vaccination rates and shows when each age
-groups were getting the vaccine while also showing the percent of the
-age group vaccinated.
+This is a time-wise graph of vaccination rates and it shows when each of
+these age groups were getting the vaccine while also showing the percent
+of the age group vaccinated at a point in time.
 
 ![](Bolduc_files/figure-gfm/third-graph-1.png)<!-- -->
 
 This graph is showing the number of cases for the age groups being
-compared from December 1, 2021 and March 26, 2022 all in one.
+compared from December 1, 2021 and March 26, 2022 all in one single
+graph.
 
 ![](Bolduc_files/figure-gfm/fourth-graph-1.png)<!-- -->
 
-This shows each age groups, each with its own graph, so we can look at
-each individual age group compared to itself from December 1, 2021 and
-March 26, 2022.
+This shows each of the age groups, each with its own graph, so we can
+look at each individual age group compared to itself from December 1,
+2021 and March 26, 2022.
 
 ![](Bolduc_files/figure-gfm/fifth-graph-1.png)<!-- -->
 
-This shows each age group with each its own graph again but between
+This shows each age group each with its own graph again but between
 December 1, 2020 and December 1, 2021. We can see an overall increase
 within this year timeline.
 
 ![](Bolduc_files/figure-gfm/sixth-graph-1.png)<!-- -->
 
+I wanted to look at the statistical significance between the total
+number of cases between 2020 and 2021 between the age groups to see if
+the total cases were significantly different. My Chi-square test found
+the total cases from 2020 and 2021 to be statistically significant.
+
+    ## 
+    ##  Pearson's Chi-squared test
+    ## 
+    ## data:  .
+    ## X-squared = 5154.5, df = 9, p-value < 2.2e-16
+
 ## Discussion
 
-We were unable to run a statistical test on this data due to the age
-groups being different between the different data sets that we used.The
-reason we were unable to do this was because the data sets used didn’t
-have the exact same age ranges.
+We were unable to run a statistical test between the two different data
+sets and results due to the age groups being different between the data
+sets that we used. We can, however, do a statistical test within the
+data set on its own.
 
 ## References
 
