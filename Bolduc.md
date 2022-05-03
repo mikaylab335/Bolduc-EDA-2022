@@ -15,7 +15,7 @@ Minnesota State University Moorhead Biosciences Department<sup>1</sup>
 
     -   There can be many reasons for this like the different variants being spread at this time. Such as the Omicron variant that was between December 2021-March 2022.
     
-- Ran a Chi-squared test on the total cases from 2020 and 2021 and found that 2021 was statistically significant and higher than 2020.
+-   Ran a Chi-squared test on the total cases from 2020 and 2021 and found that 2021 was statistically significant and higher than 2020.
 
 
 <img src="https://static01.nyt.com/images/2020/10/11/us/coronavirus-unveiled-promo-1602171596829/coronavirus-unveiled-promo-1602171596829-superJumbo-v3.jpg" width="528"/>
