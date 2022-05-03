@@ -5,7 +5,6 @@ library(tidyverse)
 citation()
 citation("tidyverse")
 RStudio.Version()
-
 if (!dir.exists("figs")) dir.create("figs")
 
 # Data for Graph with width of age range ----
