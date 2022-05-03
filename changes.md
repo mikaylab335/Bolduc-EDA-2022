@@ -10,7 +10,7 @@
 
     -   Table of contents
 
-    -   Introduction tweaks, Results/graphs added, Discussion, and Acknowledgements
+    -   Introduction tweaks (added citations), Results/graphs added, Discussion, and Acknowledgements
 
     -   Added content to methods
 
@@ -21,6 +21,7 @@
 -   Original Code tweaks
 
     -   Cleaned up code
+    -   Added Headers for code (made more readable)
 
         -   Fixed Vaccination data to run better
 
