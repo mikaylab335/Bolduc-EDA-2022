@@ -18,6 +18,8 @@
 
     -   There can be many reasons for this like the different variants become spread at this time.
 
+-   Ran a Chi-squared test on the total cases from 2020 and 2021 and found that 2021 was statistically significant and higher than 2020.
+
 ## Contents
 
 -   [Full Report](Bolduc.md)
